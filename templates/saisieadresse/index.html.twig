@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Paris Lights</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+ <link rel="shortcut icon" type="image/ico"  href="{{ asset('build/images/favicon.a983b5d0.ico') }}"/>
+
+  <!-- jQuery script-->
+  <script src="https://kit.fontawesome.com/be04c3beef.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+  <!-- Google Fonts -->
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  
+<!-- CSS Files -->
+
+  <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css')}}" >
+  <link rel="stylesheet" href="{{asset('bootstrap/aos.css')}}">
+  <link href="{{asset('bootstrap/StyleSaisieadresse.css')}}" rel="stylesheet">
+  
+
+
+  <!-- =======================================================
+  * Template Name: Squadfree - v2.0.0
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!--header -->
+  <header id="header">
+<ul id="menu-demo2">
+  <li><a href="#"> Change Language   <img src="{{asset('bootstrap/img/'~app.request.locale~'.ico')}}" alt="langue_choisie"> <i class="fas fa-sort-down"></i> </a>
+    <ul>
+       <li> <a  href="{{path ('changelangue',{'locale':locales.0})}}" class="img_uk"> <img src="{{asset('bootstrap/img/en.ico')}}" 
+                alt="en"> English</a>  </li>
+              <li> <a class="nom_langue" href="{{path ('changelangue',{'locale':locales.1})}}" > <img src="{{asset('bootstrap/img/fr.ico')}}"
+                 alt="fr">Français</a></li>
+              <li> <a class="nom_langue" href="{{path ('changelangue',{'locale':locales.2})}}" > <img src="{{asset('bootstrap/img/es.ico')}}"
+                 alt="es">Espagnol</a></li>
+              <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.3})}}" ><img src="{{asset('bootstrap/img/ar.ico')}}"
+                 alt="ar"> العربية</a></li>
+                  <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.4})}}" class="img_uk"><img src="{{asset('bootstrap/img/ru.ico')}}"
+                 alt="ru">русский</a></li>
+                   <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.5})}}" class="img_uk"><img src="{{asset('bootstrap/img/zh.ico')}}"
+                 alt="zh">中国人</a></li>
+                 <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.6})}}" class="img_uk"><img src="{{asset('bootstrap/img/de.ico')}}"
+                 alt="de">Deutsch</a></li>
+                 <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.7})}}" class="img_uk"><img src="{{asset('bootstrap/img/it.ico')}}"
+                 alt="it">Italiano</a></li>
+   
+   
+    </ul>
+  </li>
+</ul>
+
+
+ </header>
+<!-- end header -->
+  
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+      <h1>Paris Lights</h1><br>
+       <h2> Welcome to Paris </h2>
+   		<div class="formulairedesaisie"  data-aos="fade-up" data-aos-delay="50">
+      		<p id="error" class="erreur"> {{erreur}}</p>
+        	{{form_start(form)}}
+ 			<a id="btn_1"  onclick="startDictation()" > <i class="fas fa-microphone-alt"></i></a>
+        	{{ form_widget (form.adresse) }}  
+ 			<button type="submit" > <i class="fas fa-search"></i> </button>
+  			<a id="btn" onclick="recuperationPosition()"><i class="fas fa-location-arrow"></i></a>
+  			<br>
+ 		<div class="range-slider">
+  			{{ form_widget (form.rayon) }}
+ 		 	<span id="f">1000</span><p class="Metre">m</p>
+	</div>
+        {{form_end(form)}}
+   </div>
+       
+ 		<h5>swipe to change the radius</h5>
+<script>
+
+var slideCol = document.getElementById("saisie_adresse_rayon");
+
+var y = document.getElementById("f");
+y.innerHTML = slideCol.value;
+
+slideCol.oninput = function() {
+    y.innerHTML = this.value;
+}
+
+</script>
+    </div>
+  </section>
+  <!-- End Hero section -->
+
+  <!-- auto-complete class -->
+     <div class="autocomplete" style="width:300px;">
+
+  <!-- auto-complete script -->
+        <script>
+
+$("#saisie_adresse_adresse").autocomplete({
+    source: function (request, response) 
+    {
+        $.ajax({
+         
+            url: "https://api-adresse.data.gouv.fr/search/?",
+            data: { q:request.term+"paris 75" },
+            dataType: "json",
+            success: function (data) {
+                response($.map(data.features, function (item) {
+                     return { label:item.properties.label,
+                    
+                    value: item.properties.label };
+    
+                }));
+            }
+        });
+        
+    }
+   
+    }); 
+</script>
+ <!-- voice to speech  script -->
+<script >
+  
+  function startDictation() {
+    
+
+        if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+          var recognition = new webkitSpeechRecognition();
+
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = "fr-FR";
+          recognition.start();
+
+          recognition.onresult = function (e) {
+            document.getElementById('saisie_adresse_adresse').value = e.results[0][0].transcript;
+
+            recognition.stop();
+            document.getElementById('labnol').submit();
+          };
+          recognition.onerror = function(e) {
+            recognition.stop();
+          }
+        }
+      }
+
+    </script>
+    <!-- geolocalisation script -->
+    <script>
+function recuperationPosition(){
+function maPosition(position) {
+  if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition);
+  var infopos_lat = position.coords.latitude ;
+  var infopos_long=position.coords.longitude;
+
+var lien="https://api-adresse.data.gouv.fr/reverse/?lon="+infopos_long+"&lat="+infopos_lat;
+    var url =lien;
+    $.get(url, callBackGetSuccess).done(function() {
+      })
+      .fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+        
+      });
+} 
+       var callBackGetSuccess = function(data) {  
+    document.getElementById('saisie_adresse_adresse').value =data.features[0].properties.label;
+}   
+   if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition);
+}
+</script>
+<script>
+       var erreur = document.getElementById("error").innerHTML;
+       if (erreur==" veuillez saisir une adresse de paris"){
+         document.getElementById("saisie_adresse_adresse").style.borderColor= "red";
+       }
+         if (erreur==" veuillez saisir une adresse valide "){
+         document.getElementById("saisie_adresse_adresse").style.borderColor= "red";
+       }  
+      
+</script>
+   
+</div>
+
+
+  
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2> Team  </h2>
+                          <p>  
+This project is carried out in the context of guaranteeing to the user an easier access to information around a defined address, 
+otherwise, the main objective of the web-site is to offer services near a given address.
+Therefore, after entering the address by the user, the site makes available a complete list of centers of interest located nearby, more precisely within a radius of one or two kilometers (Restaurants, Velib , Green spaces...).
+In addition, this site covers several areas and targets different targets, it is primarily intended for tourists (visitors of Paris). However, it can also be useful for 
+contractors wishing to invest in Paris by optimizing their access to relevant information concerning the services located near a given address.
+</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up">
+              <div class="pic"></div>
+              <div class="member-info">
+                <h4>Djema Menouar</h4>
+                 <span>developper </span>
+                <div class="social">
+                 
+                  <a href="https://fr.linkedin.com/in/menouar-djema-63b6b3159"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up">
+              <div class="pic"></div>
+              <div class="member-info">
+                <h4>Nechaf Anes</h4>
+                <span>developper </span>
+                <div class="social">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="150">
+              <div class="pic"></div>
+              <div class="member-info">
+                <h4>Saghroun Amos</h4>
+                 <span>developper </span>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/amos-saghroun-225a2617a"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="pic"></div>
+              <div class="member-info"style="
+    margin-top: 50px;
+">
+                <h4>Abbasi Sinda</h4>
+                 <span>developper </span>
+                <div class="social">
+                 
+                  <a href="https://www.linkedin.com/mwlite/in/sinda-abbassi-1637b7187"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+  
+  
+
+ 
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Paris Lights</span></strong>. All Rights Reserved
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('bootstrap/jquery.min.js')}}"></script>
+  <script src="{{asset('bootstrap/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('bootstrap/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('bootstrap/counterup.min.js')}}"></script>
+  <script src="{{asset('bootstrap/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('bootstrap/venobox.min.js')}}"></script>
+  <script src="{{asset('bootstrap/aos.js')}}"></script>
+  <script src="{{asset('bootstrap/owl.carousel.min.js')}}"></script>
+  <!-- Template Main JS File -->
+  <script src="{{asset('bootstrap/main.js')}}"></script>
+
+</body>
+
+</html>

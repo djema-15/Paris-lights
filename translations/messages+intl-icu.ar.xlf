@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="ar" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="FbZiA8q" resname="Welcome to Paris">
+        <source>Welcome to Paris</source>
+        <target>مرحبا بكم في باريس</target>
+      </trans-unit>
+      <trans-unit id="9RWl4._" resname="click here to geolocate yourself">
+        <source>click here to geolocate yourself</source>
+        <target>انقر هنا لتحديد موقعك الجغرافي </target>
+      </trans-unit>
+      <trans-unit id="WYUDnxB" resname="Team">
+        <source>Team</source>
+        <target>فريق</target>
+      </trans-unit>
+      <trans-unit id="G.yh0Pi" resname="developper">
+        <source>developper</source>
+        <target>مطور</target>
+      </trans-unit>
+ <trans-unit id="qurUq.X" resname="Transport">
+        <source>Transport</source>
+        <target>النقل</target>
+      </trans-unit>
+      <trans-unit id="nzLMFpL" resname="parking">
+        <source>Parking</source>
+        <target>مواقف السيارات</target>
+      </trans-unit>
+      <trans-unit id="9JvbML3" resname="Vélib 'stations">
+        <source>Vélib 'stations</source>
+        <target>محطات الدراجات</target>
+      </trans-unit>
+      <trans-unit id="n7iJynt" resname="Hotels">
+        <source>Hotels</source>
+        <target>الفنادق</target>
+      </trans-unit>
+      <trans-unit id="mPPSn2y" resname="Pharmacy">
+        <source>Pharmacy</source>
+        <target>الصيدليات</target>
+      </trans-unit>
+      <trans-unit id="ry6RKWk" resname="Schools">
+        <source>Schools</source>
+        <target>المدارس</target>
+      </trans-unit>
+      <trans-unit id="Yu9v2S7" resname="Libraries">
+        <source>Libraries</source>
+        <target>مكتبات</target>
+      </trans-unit>
+      <trans-unit id=".s6C8Pi" resname="Green spaces">
+        <source>Green spaces</source>
+        <target>المساحات الخضراء</target>
+      </trans-unit>
+      <trans-unit id="jRT25y3" resname="Events">
+        <source>Events</source>
+        <target>الأحداث</target>
+      </trans-unit>
+      <trans-unit id="gp5scHL" resname="Kiosks">
+        <source>Kiosks</source>
+        <target>أكشاك</target>
+      </trans-unit>
+      <trans-unit id="FOLsNj8" resname="Charging stations">
+        <source>Charging stations</source>
+        <target>محطات الشحن</target>
+      </trans-unit>
+      <trans-unit id="BOEPfct" resname="polling station">
+        <source>polling station</source>
+        <target>مكاتب الاقتراع</target>
+      </trans-unit>
+      <trans-unit id="AsnSUz_" resname="This project is carried out in the context of guaranteeing to the user an easier access to information around a defined address, &#10;otherwise, the main objective of the web-site is to offer services near a given address.&#10;Therefore, after entering the address by the user, the site makes available a complete list of centers of interest located nearby, more precisely within a radius of one or two kilometers (Restaurants, Velib , Green spaces...).&#10;In addition, this site covers several areas and targets different targets, it is primarily intended for tourists (visitors of Paris). However, it can also be useful for &#10;contractors wishing to invest in Paris by optimizing their access to relevant information concerning the services located near a given address.">
+        <source>This project is carried out in the context of guaranteeing to the user an easier access to information around a defined address, 
+otherwise, the main objective of the web-site is to offer services near a given address.
+Therefore, after entering the address by the user, the site makes available a complete list of centers of interest located nearby, more precisely within a radius of one or two kilometers (Restaurants, Velib , Green spaces...).
+In addition, this site covers several areas and targets different targets, it is primarily intended for tourists (visitors of Paris). However, it can also be useful for 
+contractors wishing to invest in Paris by optimizing their access to relevant information concerning the services located near a given address.</source>
+        <target>يتم تنفيذ هذا المشروع في سياق ضمان سهولة وصول المستخدم إلى المعلومات حول عنوان تم إدخاله ، وبعبارة أخرى ، فإن الهدف الرئيسي لهذا الأخير هو تقديم الخدمات بالقرب من عنوان معين.
+لذلك ، بعد إدخال العنوان من قبل المستخدم ، يوفر الموقع قائمة كاملة بالمراكز ذات الأهمية الموجودة في مكان قريب ، وبشكل أدق داخل دائرة نصف قطرها كيلومتر واحد أو كيلومتران (المطاعم ،دراجات، مساحات خضراء...).
+بالإضافة إلى ذلك ، يغطي هذا الموقع العديد من المناطق ويستهدف أهدافًا مختلفة ، وهو مخصص في المقام الأول للسياح (زوار باريس). ومع ذلك ، يمكن أن يكون مفيدًا أيضًا لرجال الأعمال الذين يرغبون في الاستثمار في باريس من خلال تحسين وصولهم إلى المعلومات ذات الصلة المتعلقة بالخدمات الموجودة بالقرب من عنوان معين.</target>
+      </trans-unit>
+<trans-unit id="kJoKNqj" resname="Change Language">
+        <source>Change Language</source>
+        <target>تغيير اللغة</target>
+      </trans-unit>
+ <trans-unit id="bheAZJ3" resname="List of libraries">
+        <source>List of libraries</source>
+        <target>قائمة المكتبات</target>
+      </trans-unit>
+      <trans-unit id="Jb6tjKs" resname="List of charging stations">
+        <source>List of charging stations</source>
+        <target>قائمة محطات الشحن</target>
+      </trans-unit>
+      <trans-unit id="DM7SkgB" resname="List of polling stations">
+        <source>List of polling stations</source>
+        <target>قائمة مراكز الاقتراع</target>
+      </trans-unit>
+      <trans-unit id="0BQVpfp" resname="List of schools">
+        <source>List of schools</source>
+        <target>قائمة المدارس</target>
+      </trans-unit>
+      <trans-unit id="mnoyciM" resname="List of green spaces">
+        <source>List of green spaces</source>
+        <target>قائمة المساحات الخضراء</target>
+      </trans-unit>
+      <trans-unit id="DKqO9Sv" resname="List of events">
+        <source>List of events</source>
+        <target>قائمة الأحداث</target>
+      </trans-unit>
+      <trans-unit id="OOj4z1I" resname="List of hotels">
+        <source>List of hotels</source>
+        <target>قائمة الفنادق</target>
+      </trans-unit>
+      <trans-unit id="dKLZkT4" resname="List of kiosks">
+        <source>List of kiosks</source>
+        <target>قائمة الأكشاك</target>
+      </trans-unit>
+      <trans-unit id="yQvXnPo" resname="List of Parking">
+        <source>List of Parking</source>
+        <target>قائمة مواقف السيارات</target>
+      </trans-unit>
+      <trans-unit id="SMV3G.e" resname="List of pharmacys">
+        <source>List of pharmacys</source>
+        <target>قائمة الصيدليات</target>
+      </trans-unit>
+      <trans-unit id="W8r77Ey" resname="List of Stations">
+        <source>List of Stations</source>
+        <target>قائمة المحطات</target>
+      </trans-unit>
+ <trans-unit id="Oc86cLb" resname="Your adress">
+        <source>Your adress</source>
+        <target>عنوانك</target>
+      </trans-unit>
+ <trans-unit id="a_WPXts" resname="Address note">
+        <source>Address note</source>
+        <target>علامة العنوان </target>
+      </trans-unit>
+      <trans-unit id="aSOLBwI" resname="The stars ratings refer to availability">
+        <source>The stars ratings refer to availability</source>
+        <target>تشير تصنيفات النجوم إلى التوفر</target>
+      </trans-unit>
+     <trans-unit id="SmTWyEn" resname="Parking">
+        <source>Parking</source>
+        <target>مواقف السيارات</target>
+      </trans-unit>
+	<trans-unit id=".Kq6cnB" resname="swipe to change the radius">
+        <source>swipe to change the radius</source>
+        <target>اسحب لتغيير نصف القطر</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

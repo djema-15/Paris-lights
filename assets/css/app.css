@@ -1,0 +1,79 @@
+#header_resultat {
+    padding: 20px 0;
+    background-color : #000;
+  }
+
+  .ui-autocomplete {
+      max-width: 600px;
+      overflow-x: auto;
+      /* prevent horizontal scrollbar */
+      overflow-x: hidden;
+      cursor: hand;
+      list-style-type:none ;
+  }
+   .ui-autocomplete {
+      width: 600px;
+      list-style-type:none ;
+  }
+  .ui-helper-hidden-accessible { display:none; }
+  .ui-autocomplete-input {
+    cursor: hand;
+  
+}
+.about {
+background: url(/bootstrap/img/about-bg.jpg) center center no-repeat;
+background-size: cover;
+padding: 300px 0;
+position: relative;
+}
+input[type=text]{
+font : rgb(0, 0, 0);
+padding-inline-start: 20px;
+height: 35px;
+width: 500px;
+
+padding : 0px 1px 1px 20px;
+ margin-top: 10px;
+ margin-right:0px;
+ background-size: cover;
+position: relative;
+z-index: 10;
+display : inline-block;
+cursor:hand;
+border-radius: 40px,40px,0px,0px;
+box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
+background: #fff;
+
+}
+
+
+button[type=submit]{
+background-color:   rgb(250, 250, 250);
+border :2px;
+border-radius: 0px 30px 30px 0px;
+height: 35px;
+width: 60px;
+margin-left:0px;
+border-color: black;
+}
+
+@media screen and (max-width: 600px) {
+.col-25, .col-75,input[type=text] {
+  width: 100%;
+  margin-top: 0;
+}
+}
+.icon-box{
+  width:200px;
+   margin-left: 5px;
+margin-top:15px;
+height:250px;
+}
+#main{
+  margin-top:70px;
+}
+.etoile{
+color: gold;
+padding-bottom: 2px;
+}

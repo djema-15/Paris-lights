@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Paris Lights</title>
+  <!-- Favicons -->
+   <link rel="shortcut icon" type="image/ico"  href="{{ asset('build/images/favicon.a983b5d0.ico') }}"/>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <script src="https://kit.fontawesome.com/be04c3beef.js" crossorigin="anonymous">
+
+  </script>
+  <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+   <!-- CSS Files -->
+
+  <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css')}}" >
+  <link rel="stylesheet" href="{{asset('bootstrap/aos.css')}}">
+  <link rel="stylesheet" href="{{asset('bootstrap/StyleServices.css')}}" >
+  
+ 
+  <!-- =======================================================
+  * Template Name: Squadfree - v2.0.0
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="body">
+
+  <!-- =============Header =============== -->
+  <header id="header_resultat" >
+    <div class="container d-flex">
+      <div class="logo mr-auto">
+        <a href="/ParisLights/public/" ><h1 class="text-light" ><span>Paris Lights</span></h1></a>
+      </div>
+    </div>
+  </header>
+<!-- ============= End Header ===============-->
+  
+  <!-- =============service section =================-->
+    <section id="services" class="services" >
+      <div class="container" >
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" >
+          <h2>  List of Stations </h2>
+           {% if  velib  is empty %}
+                  <div class="aucun" data-aos="fade-in" data-aos-delay="100">
+                 Not available 
+                 </div> 
+
+                 {% endif %}
+               <div class="row">
+               {% for noms in  velib   %} 
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+               <a href="#myframe"  >
+               <div   class="icon-box"  data-aos="fade-up" onclick="trigger('{{noms['Nom_station']}}' )" >
+               <h4 class="title" ><span>{{noms['Nom_station']}}</span></h4>
+              <p class="description"> {{noms['adresse_station']}}</p>
+              <span> <a href="https://www.google.fr/maps/dir/{{adresse_saisie}}/{{noms['adresse_station']}}"   target="_blank"><i class="fas fa-route"></i></a></span>
+            </div>
+          </div>
+            {% endfor %}    
+        </div>
+      </div>
+       <iframe id="myframe" src="https://opendata.paris.fr/explore/embed/dataset/velib-disponibilite-en-temps-reel/map/?disjunctive.name&geofilter.distance={{latitude}}%20,{{longitude}},%201000&disjunctive.is_installed&disjunctive.is_renting&disjunctive.is_returning&disjunctive.nom_arrondissement_communes&basemap=jawg.white&location=11,{{latitude}},{{longitude}}&static=false&datasetcard=false&scrollWheelZoom=false" width="100%" height="300" frameborder="0"></iframe>
+    </section>
+</div> 
+    <!-- ============End Service Section ================-->
+  
+  <script>
+  function trigger(adresse){
+
+ 
+   var frame = document.getElementById("myframe").src="https://opendata.paris.fr/explore/embed/dataset/velib-disponibilite-en-temps-reel/map/?disjunctive.name&disjunctive.is_installed&disjunctive.is_renting&disjunctive.is_returning&disjunctive.nom_arrondissement_communes&basemap=jawg.dark&location=10,48.85593,2.35192&static=false&datasetcard=false&scrollWheelZoom=false&q="+adresse ;    
+
+  }
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('bootstrap/jquery.min.js')}}"></script>
+  <script src="{{asset('bootstrap/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('bootstrap/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('bootstrap/counterup.min.js')}}"></script>
+  <script src="{{asset('bootstrap/aos.js')}}"></script>
+  <script src="{{asset('bootstrap/owl.carousel.min.js')}}"></script>
+  <!-- Template Main JS File -->
+  <script src="{{asset('bootstrap/main.js')}}"></script>
+
+  <style>
+.services .icon-box{
+  height:200px;
+}
+
+            .services .icon-box:hover::before {
+      background-color:#090C72;
+}
+
+    
+</style>
+</body>
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+        <div class="copyright">
+             &copy; Copyright <strong><span>Paris Lights</span></strong>. All Rights Reserved
+        </div>
+    </div> 
+  </footer>
+  <!-- End Footer -->
+</html>

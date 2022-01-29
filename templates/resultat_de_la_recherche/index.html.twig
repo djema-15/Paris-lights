@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Paris Lights</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+ <link rel="shortcut icon" type="image/ico"  href="{{ asset('build/images/favicon.a983b5d0.ico') }}"/>
+
+
+  <!-- Icon -->
+  <script src="https://kit.fontawesome.com/be04c3beef.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+  <!-- Google Fonts -->
+  
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <!--  CSS Files -->
+  <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css')}}" >
+  <link rel="stylesheet" href="{{asset('bootstrap/aos.css')}}">
+  <link rel="stylesheet" href="{{asset('bootstrap/StyleResultat.css')}}" >
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />  
+
+
+</head>
+
+
+<body class="body">
+ 
+  <!-- ======= Header ======= -->
+  <header id="header_resultat">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto" style="
+    height: 10px;">
+        <a href="/" ><h1 class="text-light" ><span>Paris Lights</span></h1></a>
+       
+      </div>
+
+       <div class="formulairedesaisie"  data-aos="fade-up" data-aos-delay="50">
+        <p id="error" class="erreur"> {{erreur}}</p>
+        {{form_start(form1)}}
+<a id="btn_1"  onclick="startDictation()" > <i class="fas fa-microphone-alt"></i></a>
+        {{ form_widget (form1.adresse) }}
+               
+  <button type="submit" > <i class="fas fa-search"></i> </button>
+    <a id="btn" onclick="recuperationPosition()"><i class="fas fa-location-arrow"></i></a>
+  <br>
+ <div class="range-slider">
+  {{ form_widget (form1.rayon) }}
+
+<span id="f">1000</span>
+
+</div>
+ 
+
+        {{form_end(form1)}}
+        </div>
+
+    </div>
+    <ul id="menu-demo2">
+
+  <li><a href="#"> Change Language  <img src="{{asset('bootstrap/img/'~app.request.locale~'.ico')}}" alt="langue_choisis"> </a>
+    <ul>
+       <li> <a class="nom_langue" href="{{path ('changelangue',{'locale':locales.0})}}" > <img src="{{asset('bootstrap/img/en.ico')}}" 
+                alt="en"> English</a>  </li>
+              <li> <a class="nom_langue" href="{{path ('changelangue',{'locale':locales.1})}}" > <img src="{{asset('bootstrap/img/fr.ico')}}"
+                 alt="fr">Français</a></li>
+              <li> <a class="nom_langue" href="{{path ('changelangue',{'locale':locales.2})}}" > <img src="{{asset('bootstrap/img/es.ico')}}"
+                 alt="es">Espagnol</a></li>
+              <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.3})}}" ><img src="{{asset('bootstrap/img/ar.ico')}}"
+                 alt="ar"> العربية</a></li>
+                  <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.4})}}" ><img src="{{asset('bootstrap/img/ru.ico')}}"
+                 alt="ru">русский</a></li>
+                   <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.5})}}" ><img src="{{asset('bootstrap/img/zh.ico')}}"
+                 alt="zh">中国人</a></li>
+                 <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.6})}}" ><img src="{{asset('bootstrap/img/de.ico')}}"
+                 alt="de">Deutsch</a></li>
+                 <li><a class="nom_langue" href="{{path ('changelangue',{'locale':locales.7})}}" ><img src="{{asset('bootstrap/img/it.ico')}}"
+                 alt="it">Italiano</a></li>
+   
+    </ul>
+  </li>
+</ul>
+  </header>
+  <!-- End Header -->
+
+  
+
+
+    <!-- ======= Section Service ======= -->
+    
+    <section id="services" class="services">
+      <div class="container">
+
+
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        
+          <h2 id="adresse_saisie">Your adress : {{adresserecherchée}}</h2>
+     <h2 style="font-size:20px">  Address note :<span class="	etoile" style="font-size:25px">{{note_finale}}</span> </h2> 
+        <p class="remarque">*The stars ratings refer to availability  </p>
+
+        <div class="row">
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+           <a href="/transport_paris" target="_blank">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i style="color:#6BB094" class="fas fa-subway"></i></div>
+              <h4 class="title"><span>Transport </span> </h4>
+               <p class="description">{{nombres_transport}}</p>
+              <span class="etoile">{{etoiles_transport}}</span>
+
+            </div>
+          </div>
+      	</a>
+      
+             
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a href="/velib" target="_blank">
+            <div   class="icon-box" data-aos="fade-up">
+
+              <div class="icon"><i style="color: #5C9FA8" class="fas fa-bicycle"></i></div>
+              
+              <h4 class="title"><span >Vélib 'stations</span></h4>
+                 <p class="description">{{nombres_velos}}</p>
+            
+              <span class="etoile">{{etoiles_velib}}</span>
+
+            </div>
+          </div>
+      </a>
+            
+          
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a href="/Ecoles" target="_blank">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i   class="fas fa-graduation-cap"></i></div>
+              <h4 class="title"><span > Schools </span></h4>
+               <p class="description">{{nombres_ecoles}}</p>
+              <span class="etoile">{{etoiles_ecoles}}</span>
+
+            </div>
+          </div>
+            </a>
+         
+
+      
+
+       
+         
+        
+        </div>
+      </div>
+      <div id="map">
+      <!-- Ici s'affichera la carte -->
+  </div>
+   <!-- la latitude et la longitude de l'adresse saisie  -->
+   <div id="lat" class="lat">{{latitude}}</div>
+   <div id="lon" class="lon" > {{longitude}}</div>
+    </section>
+   <!-- ======= About Section ======= -->
+         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+  <script >
+            // On initialise la latitude et la longitude de Paris (centre de la carte)
+             var lat = document.getElementById("lat").innerHTML;
+            
+            var lon = document.getElementById("lon").innerHTML;
+             var adresse_saisie = document.getElementById("adresse_saisie").innerHTML;
+   
+            var macarte = null;
+            // Fonction d'initialisation de la carte
+            function initMap() {
+                // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                macarte = L.map('map').setView([lat, lon], 14);
+                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // Il est toujours bien de laisser le lien vers la source des données
+                    attribution: 'Paris Lights © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+                var marker = L.marker([lat, lon]).addTo(macarte);
+                marker.bindPopup(adresse_saisie).openPopup();
+              var circle = L.circle([lat, lon],200, {
+    color:'#065',
+    fillColor: '#065',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(macarte);
+
+
+               
+            }
+            window.onload = function(){
+    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    initMap(); 
+            };
+        </script>
+      
+   
+        <script>
+
+$("#saisie_adresse_adresse").autocomplete({
+    source: function (request, response) 
+    {
+        $.ajax({
+            url: "https://api-adresse.data.gouv.fr/search/",
+            data: { q: request.term+"paris 75" },
+            dataType: "json",
+            success: function (data) {
+                response($.map(data.features, function (item) {
+                    return { label:item.properties.label,
+                    
+                    value: item.properties.label };
+                }));
+            }
+        });
+        
+    }
+   
+    }); 
+</script>
+</div>
+    </section>
+    <!-- End About Section -->
+ 
+<script>
+
+var slideCol = document.getElementById("saisie_adresse_rayon");
+
+var y = document.getElementById("f");
+y.innerHTML = slideCol.value;
+
+slideCol.oninput = function() {
+    y.innerHTML = this.value;
+}
+
+
+</script>
+  <script>
+   
+
+       var erreur = document.getElementById("error").innerHTML;
+       console.log(erreur);
+       //window.alert(erreur);
+   
+       if (erreur==" veuillez saisir une adresse de paris"){
+         document.getElementById("saisie_adresse_adresse").style.borderColor= "red";
+ 
+       
+       }
+         if (erreur==" veuillez saisir une adresse valide "){
+         document.getElementById("saisie_adresse_adresse").style.borderColor= "red";
+
+       }
+
+      
+       
+</script>
+   
+<!-- voice to speech  script -->
+<script >
+  
+  function startDictation() {
+    
+
+        if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+          var recognition = new webkitSpeechRecognition();
+
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = "fr-FR";
+          recognition.start();
+
+          recognition.onresult = function (e) {
+            document.getElementById('saisie_adresse_adresse').value = e.results[0][0].transcript;
+
+            recognition.stop();
+            document.getElementById('labnol').submit();
+          };
+          recognition.onerror = function(e) {
+            recognition.stop();
+          }
+        }
+      }
+
+    </script>
+    <!-- geolocalisation script -->
+    <script>
+function recuperationPosition(){
+function maPosition(position) {
+  if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition);
+  var infopos_lat = position.coords.latitude ;
+  var infopos_long=position.coords.longitude;
+
+var lien="https://api-adresse.data.gouv.fr/reverse/?lon="+infopos_long+"&lat="+infopos_lat;
+    var url =lien;
+    $.get(url, callBackGetSuccess).done(function() {
+      })
+      .fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+        
+      });
+} 
+       var callBackGetSuccess = function(data) {  
+    document.getElementById('saisie_adresse_adresse').value =data.features[0].properties.label;
+}   
+   if(navigator.geolocation)
+  navigator.geolocation.getCurrentPosition(maPosition);
+}
+</script>
+  
+  <!-- Vendor JS Files -->
+  <script src="{{asset('bootstrap/jquery.min.js')}}"></script>
+  <script src="{{asset('bootstrap/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('bootstrap/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('bootstrap/counterup.min.js')}}"></script>
+  <script src="{{asset('bootstrap/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('bootstrap/venobox.min.js')}}"></script>
+  <script src="{{asset('bootstrap/aos.js')}}"></script>
+  <script src="{{asset('bootstrap/owl.carousel.min.js')}}"></script>
+  <!-- Template Main JS File -->
+  <script src="{{asset('bootstrap/main.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Paris Lights</span></strong>. All Rights Reserved
+      </div>
+     </div>
+  </footer>
+  <!-- End Footer -->
+
+</html>

@@ -1,0 +1,449 @@
+/**
+* Template Name: Squadfree - v2.0.0
+* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+.aucun{
+    color:red;
+    margin-top:150px;
+    font-size:45px;
+    padding-top: 100px;
+}
+
+.ui-autocomplete {
+    
+    background-color:white;
+    max-width: 580px;
+    overflow-x: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    
+    list-style-type:none ;
+    flex-direction: column;
+        padding: 0;
+        cursor: default;
+        border-radius: 0 0 5px 5px;
+        z-index: 2000;
+  }
+
+   .ui-autocomplete {
+    width: 580px;
+    list-style-type:none ;
+    z-index: 2000;
+  }
+  .ui-autocomplete :hover {
+    background: grey;
+    z-index: 2000;
+  
+  }  
+  .ui-helper-hidden-accessible { display:none; }
+  .ui-autocomplete-input {
+    cursor: hand;
+  
+}
+.ui-menu .ui-wid{
+    height: 60px;
+    width: 600px;
+   
+  }
+  .etoile{
+    color: gold;
+    padding-bottom: 2px;
+    }
+  input[type=text]{
+    background-color: white;
+   
+    font: rgb(0, 0, 0);
+    padding-inline-start: 20px;
+    height: 40px;
+    width: 580px;
+    box-sizing: border-box;
+    padding: 0px 1px 1px 20px;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 10px;
+    margin-right: 0px;
+    background-size: cover;
+    /* position: relative; */
+    z-index: 12;
+    display: inline-block;
+    padding-inline-end: 60px;
+  }
+  button[type=submit]{
+    background-color: white;
+    border: 2px;
+    border-radius: 0px 30px 30px 0px;
+    height: px;
+    width: 0px;
+    margin-left: -50px;
+    border-color: black;
+  }
+  
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    color:black;
+  }
+  
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  h1{
+    font-family: 'Great Vibes', cursive;
+	 font-size: 3.5rem;
+    margin-top: 9px;
+  }
+   h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  
+ 
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header_resultat {
+    padding: 15px 0;
+    background:url(/ParisLights/public/bootstrap/img/header.png);
+ 
+    z-index: 10;
+height: 110px;
+  }
+  
+ 
+  #header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    padding: 6px 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 1px;
+ 
+  }
+  
+  #header .logo h1 a, #header .logo h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    #header {
+      height: 60px;
+      padding: 10px 0;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url(/bootstrap/img/hero-bg.jpg) top center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  #hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 56px;
+   
+    color: #fff;
+    text-shadow: -1px 0 2px #2f4d5a;
+  }
+  
+  #hero h2 {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: -1px 0 2px #2f4d5a;
+  }
+  
+  #hero .btn-get-started {
+    font-size: 36px;
+    display: inline-block;
+    padding: 4px 0;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+    margin: 10px;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  #hero .btn-get-started:hover {
+    padding-top: 8px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-bg {
+    background-color: #f4f9fc;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 30px;
+    color: #2f4d5a;
+    z-index: 2;
+  }
+  
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 122px;
+    height: 66px;
+    background: url(/bootstrap/imag/section-title-bg.png) no-repeat;
+    z-index: -1;
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+  
+ 
+  /*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+  .services{
+
+  background:url(/ParisLights/public/bootstrap/img/sinda.jpeg) fixed center center;
+    
+    width: 100%;
+   
+    
+    background-size: cover;
+    
+    }
+  .services .icon-box {
+   
+        margin-left: 0px;
+        margin-top:15px;
+        width:240px;
+        height: 240px;
+        display:inline-table;  
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background:#ffff;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        transition: all 0.3s ease-in-out;  
+        border-radius: 10px;
+        z-index: 1;
+      
+  }
+  
+  .services .icon-box::before {
+    content: '';
+    position: absolute;
+    background: white;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  
+  .services .icon-box:hover::before {
+    background: #000;
+    top: 0;
+    border-radius: 0px;
+  }
+  
+  
+  .services .icon {
+    margin-bottom: 15px;
+  }
+  
+  .services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color:#000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .services .title {
+    font-weight: 700;
+    margin-top: 25px;
+   
+    font-size: 18px;
+  }
+  
+  .services .title a {
+    color: #000;
+  }
+  .services .title a {
+    color: #000;
+  }
+  
+  .services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+  
+  .services .icon-box:hover .title a, .services .icon-box:hover .description {
+    color: #fff;
+  }
+  
+  .services .icon-box:hover .icon i {
+    color: #fff;
+  }
+  
+
+  
+
+  
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    background: #065;
+    padding: 0 0 30px 0;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  #footer .footer-top {
+    padding: 60px 0 30px 0;
+    margin-bottom: 0;
+  }
+  
+  #footer .copyright {
+    border-top: 1px solid #385b6b;
+    text-align: center;
+    padding-top: 30px;
+  }
+ 
+  
+  
+ 
+  
+  
+  @media (max-width: 575px) {
+    #footer .footer-top .footer-info {
+      margin: -20px 0 30px 0;
+    }
+  }
+  
+  #main{
+    margin-top:70px;
+  }
+
+  @media screen and (max-width: 667px) {
+    .services .icon-box {
+        margin-left: 40px;
+    }
+      h1 {
+          font-size: 30px;
+
+      }
+
+    input[type=text] {
+        width: 230px;
+        z-index: 1000;
+        margin-right:25px ;
+       
+    }
+     .ui-autocomplete {
+      background-color:white;
+        max-width: 230px;
+        overflow-x: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        
+        list-style-type:none ;
+        flex-direction: column;
+            padding: 20px;
+            cursor: default;
+            border-radius: 30px 30px 30px 30px;
+        
+        
+        
+    }
+    
+}
+
+::placeholder {
+ 
+    font-style:italic;
+  }

@@ -1,0 +1,25 @@
+.icon-box{
+    height: 430px;
+}
+    
+h4{
+    color:black;
+
+}
+
+.icon-box:hover h4{
+    color:white;
+}
+
+p{
+    color: black;
+}
+
+#divimage img {
+    
+    height: 200px;
+    width: 200px;
+    display:block;
+    height:block;
+
+}

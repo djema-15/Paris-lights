@@ -7,7 +7,7 @@ Ce projet est réalisé dans le cadre de garantir à l’utilisateur un accès p
 ## lancer les containers :
 - docker compose up -d 
 ## executer le container :
-- dokcer exec -ti <docker id> bash
+- dokcer exec -ti "docker id" bash
 ## lancer le server:
 symfony server:start
 ## remplir la base de données avec le fichier plbase.sql

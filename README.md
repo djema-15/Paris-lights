@@ -9,10 +9,10 @@ Ce projet est réalisé dans le cadre de garantir à l’utilisateur un accès p
 ## executer le container :
 - dokcer exec -ti "docker id" bash
 ## lancer le server:
-symfony server:start
+- symfony server:start
 ## remplir la base de données avec le fichier plbase.sql
 - 127.0.0.1:8080 ( console phpmyadmin)
 ## lancer le web service:
 - 127.0.0.1:5000
-## deployer sur kubernetes:
+## déployer sur kubernetes:
 - https://github.com/charroux/kubernetes-minikube#installation-for-mac-windows-10-pro-enterprise-or-education

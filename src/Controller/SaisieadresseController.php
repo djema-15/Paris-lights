@@ -86,7 +86,7 @@ class SaisieadresseController extends AbstractController
               //acces a l'api
               curl_setopt($recup, CURLOPT_URL, "https://api-adresse.data.gouv.fr/search/?q=$encode");
               //chemin de certificat pour effectuer la requette https
-              curl_setopt($recup, CURLOPT_CAINFO, '/Paris_lights/certif.cer');
+              curl_setopt($recup, CURLOPT_CAINFO, '/var/www/html/certif.cer');
               curl_setopt ($recup, CURLOPT_RETURNTRANSFER, true);
     
               $data=curl_exec($recup);
@@ -203,7 +203,7 @@ class SaisieadresseController extends AbstractController
               //acces a l'api
               curl_setopt($recup, CURLOPT_URL, "https://api-adresse.data.gouv.fr/search/?q=$encode");
               //chemin de certificat pour effectuer la requette https
-              curl_setopt($recup, CURLOPT_CAINFO, '/Paris_lights/certif.cer');
+              curl_setopt($recup, CURLOPT_CAINFO, '/var/www/html/certif.cer');
               curl_setopt ($recup, CURLOPT_RETURNTRANSFER, true);
     
               $data=curl_exec($recup);
@@ -649,7 +649,7 @@ public function recupererCoord($monadresse){
     
      curl_setopt($recup, CURLOPT_URL, "https://api-adresse.data.gouv.fr/search/?q=$encode");
      //chemin de certificat pour effectuer la requette https
-     curl_setopt($recup, CURLOPT_CAINFO, '/Paris_lights/certif.cer');
+     curl_setopt($recup, CURLOPT_CAINFO, '/var/www/html/certif.cer');
      curl_setopt ($recup, CURLOPT_RETURNTRANSFER, true);
 
      $data=curl_exec($recup);
@@ -698,7 +698,7 @@ public function reversegeocode($latitude,$longitude)
                 //acces a l'api
                 curl_setopt($connexion_api_reverse, CURLOPT_URL, "https://api-adresse.data.gouv.fr/reverse/?$reverse_parametre_lien");
                 //chemin de certificat pour effectuer la requette https
-                curl_setopt($connexion_api_reverse, CURLOPT_CAINFO, '/Paris_lights/certif.cer');
+                curl_setopt($connexion_api_reverse, CURLOPT_CAINFO, '/var/www/html/certif.cer');
                 curl_setopt ($connexion_api_reverse, CURLOPT_RETURNTRANSFER, true);
               
                 $execution_api_reverse=curl_exec($connexion_api_reverse);

@@ -8,7 +8,7 @@ Ce projet est réalisé dans le cadre de garantir à l’utilisateur un accès p
 - docker compose up -d 
 ## executer le container :
 - dokcer exec -ti "docker id" bash
-## lancer le server:
+## lancer le serveur:
 - symfony server:start
 ## remplir la base de données avec le fichier plbase.sql
 - 127.0.0.1:8080 ( console phpmyadmin)

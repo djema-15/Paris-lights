@@ -15,4 +15,4 @@ symfony server:start
 ## lancer le web service:
 - 127.0.0.1:5000
 ## deployer sur kubernetes:
-
+- https://github.com/charroux/kubernetes-minikube#installation-for-mac-windows-10-pro-enterprise-or-education
